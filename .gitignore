@@ -1,0 +1,16 @@
+__pycache__/
+.pytest_cache/
+store_demand.db
+.venv/
+*.py[cod]
+store_demand.db-*
+.DS_Store
+*.log
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+.env
+.env.*
+!.env.example
