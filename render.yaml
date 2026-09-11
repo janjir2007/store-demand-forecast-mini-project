@@ -1,5 +1,5 @@
 services:
   - type: web
     name: store-demand-forecast
-    env: docker
+    runtime: docker
     plan: free
