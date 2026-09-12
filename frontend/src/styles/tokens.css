@@ -1,0 +1,63 @@
+:root {
+  /* Brand — warm brown */
+  --brand: #8b5e3c;
+  --brand-strong: #6f4a2e;
+  --brand-hover: #7a5133;
+  --brand-tint: #f6efe9;
+  --brand-tint-strong: #ecdfd3;
+
+  /* Surfaces */
+  --canvas: #fbfaf9;
+  --surface: #ffffff;
+  --surface-muted: #f7f6f4;
+
+  /* Light grey borders */
+  --border: #e9e6e2;
+  --border-strong: #ddd8d2;
+
+  /* Text */
+  --text: #191715;
+  --text-secondary: #5c5650;
+  --text-muted: #8a827a;
+  --text-on-brand: #ffffff;
+
+  /* Feedback — kept desaturated so nothing shouts */
+  --positive: #4f7355;
+  --positive-tint: #eef3ee;
+  --negative: #a4544a;
+  --negative-tint: #f8eeec;
+
+  /* Chart palette — assigned in this fixed order, never cycled.
+     Validated for lightness band, chroma floor, CVD separation and
+     contrast against a white surface. Slot 1 is a slightly stronger
+     warm brown than --brand so thin marks stay legible. */
+  --chart-1: #a0561f;
+  --chart-2: #0079a3;
+  --chart-3: #b5860f;
+  --chart-4: #9c4a72;
+  --chart-5: #3d8c4a;
+  --chart-grid: #eeebe7;
+  --chart-axis: #8a827a;
+
+  /* Radii — soft, never sharp */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+
+  /* Subtle shadows only */
+  --shadow-xs: 0 1px 2px rgba(28, 22, 16, 0.04);
+  --shadow-sm: 0 1px 2px rgba(28, 22, 16, 0.04), 0 4px 12px -6px rgba(28, 22, 16, 0.08);
+  --shadow-md: 0 2px 4px rgba(28, 22, 16, 0.04), 0 12px 28px -14px rgba(28, 22, 16, 0.14);
+
+  /* Spacing */
+  --gap-xs: 6px;
+  --gap-sm: 10px;
+  --gap-md: 16px;
+  --gap-lg: 24px;
+  --gap-xl: 32px;
+
+  --sidebar-w: 244px;
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --speed: 160ms;
+}
