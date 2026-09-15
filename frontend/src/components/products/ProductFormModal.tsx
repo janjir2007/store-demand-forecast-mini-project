@@ -94,7 +94,7 @@ export function ProductFormModal({
           label="Бүтээгдэхүүний нэр"
           value={name}
           maxLength={MAX_NAME + 20}
-          placeholder="жишээ нь: 490n shar"
+          placeholder="Бүтээгдэхүүний нэрийг оруулна уу"
           aria-invalid={Boolean(showError)}
           onChange={(event) => setName(event.target.value)}
           onBlur={() => setTouched(true)}

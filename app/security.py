@@ -4,10 +4,10 @@ from fastapi import Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer
 from pwdlib import PasswordHash
 from sqlalchemy.orm import Session
+from .config import SECRET_KEY
 from .database import get_db
 from .models import User
 
-SECRET_KEY = "change-this-secret-before-production"
 ALGORITHM = "HS256"
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="auth/login")
 password_hash = PasswordHash.recommended()

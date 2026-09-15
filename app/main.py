@@ -3,7 +3,8 @@ from fastapi import Depends, FastAPI, HTTPException, status
 from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.orm import Session
 from .database import Base, engine, get_db
-from .forecast import predict_product_demand
+from .config import MODEL_PATH
+from .forecast import load_models, predict_product_demand, train_models
 from .models import PredictionResult, Product, Sale, User
 from .schemas import PredictionOut, PredictionRequest, ProductCreate, ProductOut, SaleCreate, SaleOut, Token
 from .security import create_access_token, current_user, verify_password
@@ -18,6 +19,10 @@ def startup() -> None:
     Base.metadata.create_all(bind=engine)
     with next(get_db()) as db:
         seed_database(db)
+        # The saved model file is the source of predictions; build it only if absent.
+        if not MODEL_PATH.exists():
+            train_models(db)
+    load_models()
 
 
 @app.get("/")

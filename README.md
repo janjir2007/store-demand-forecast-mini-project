@@ -26,7 +26,9 @@
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
+cp .env.example .env   # SECRET_KEY-г өөрчилнө
 python scripts/extract_sales.py
+python scripts/train_model.py   # загварыг app/model/demand_model.joblib-д хадгална
 uvicorn app.main:app --reload
 ```
 

@@ -2,6 +2,7 @@ import csv
 from datetime import date
 from pathlib import Path
 from sqlalchemy.orm import Session
+from .config import ADMIN_PASSWORD, ADMIN_USERNAME
 from .models import Product, Sale, User
 from .security import hash_password
 
@@ -9,8 +10,8 @@ DATA_FILE = Path(__file__).parent / "data" / "cleaned_sales.csv"
 
 
 def seed_database(db: Session) -> None:
-    if not db.query(User).filter_by(username="admin").first():
-        db.add(User(username="admin", password_hash=hash_password("admin123")))
+    if not db.query(User).filter_by(username=ADMIN_USERNAME).first():
+        db.add(User(username=ADMIN_USERNAME, password_hash=hash_password(ADMIN_PASSWORD)))
     if db.query(Sale).first() or not DATA_FILE.exists():
         db.commit()
         return
